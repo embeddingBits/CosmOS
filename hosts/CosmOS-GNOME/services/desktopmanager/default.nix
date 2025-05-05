@@ -44,7 +44,21 @@
     gnome-shell-extensions                  
     rygel                   
     sushi                   
-    gnome-user-share         
+    gnome-user-share 
+    baobab
+    dconf-editor
+    eog
+    file-roller
+    gnome-calculator
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-nettool
+    gnome-power-manager
+    gnome-sound-recorder
+    gnome-weather
+    seahorse
+    zenity
   ];
 
   # Disable all optional GNOME services
@@ -57,13 +71,14 @@
     rygel.enable = false;
     sushi.enable = false;
     gnome-user-share.enable = false;
+    core-developer-tools.enable = false;
   };
 
   services.printing.enable = false;
   hardware.bluetooth.enable = false;
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.user-themes  # Keep only essential extension(s)
+    gnomeExtensions.user-themes
     gnomeExtensions.blur-my-shell
     # gnomeExtensions.burn-my-windows
     gnomeExtensions.dock-from-dash
