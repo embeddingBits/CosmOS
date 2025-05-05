@@ -1,6 +1,6 @@
 {...}: {
   hardware = {
-    bluetooth.enable = true;
+    bluetooth.enable = false;
   };
   services = {
     pulseaudio.enable = false;
@@ -10,10 +10,10 @@
       # use the example session manager (no others are packaged yet so this is enabled by default.
       # no need to redefine it in your config for now)
       # media-session.enable = true;
-      wireplumber.enable = true;
+      wireplumber.enable = false;
       alsa = {
-        enable = true;
-        support32Bit = true;
+        enable = false;
+        support32Bit = false;
       };
     };
   };

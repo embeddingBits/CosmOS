@@ -1,5 +1,6 @@
 {...}: {
   environment.variables = {
+    NIX_STRIP_DEBUG="1";
     TERMINAL = "kitty";
     PATH = "dots/scripts:$PATH";
     MOZ_ENABLE_WAYAND = "true"; # since i'm gonna be running Hyprland, Librewolf'll benefit from this

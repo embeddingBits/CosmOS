@@ -8,15 +8,15 @@
     	nerd-fonts.symbols-only 
     ];
     fontconfig = {
-      enable = true;
+      enable = false;
       # fixes pixelation
-      antialias = true;
+      # antialias = true;
     
       # fixes antialiasing blur
-      hinting.enable = true;
+      # hinting.enable = true;
       
       # fixes height
-      subpixel.rgba = "rgb";
+      # subpixel.rgba = "rgb";
    };
   };
 }

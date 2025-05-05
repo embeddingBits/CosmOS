@@ -23,7 +23,7 @@
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
+    alsa.enable = false;
     pulse.enable = true;
     # Disable extra features
     jack.enable = false;
@@ -36,16 +36,6 @@
   hardware.bluetooth.enable = false;
 
   environment.systemPackages = with pkgs; [
-    gnome-terminal
-    nautilus
-    gedit
-    gnome-tweaks
-    gnome-shell-extensions
-    # Utilities
-    wget
-    git
-    htop
-
     # Gnome Extensions
     gnomeExtensions.blur-my-shell
     gnomeExtensions.burn-my-windows

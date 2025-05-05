@@ -6,6 +6,7 @@
     channel.enable = false;
     settings = {
       sandbox = true;
+      strip = true;
       auto-optimise-store = true;
       trusted-users = [ "root" "stig" "@wheel" ];
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";

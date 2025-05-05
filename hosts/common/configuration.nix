@@ -3,6 +3,10 @@
   # "xz -Xbcj x86" and "xz -Xpreset 9 -Xbcj x86" don't work
   isoImage.squashfsCompression = "xz -Xbcj x86 -Xdict-size 100%";
   nixpkgs.hostPlatform = "x86_64-linux";
+  services.journald.extraConfig = ''
+    Storage=none
+  '';
+
   users.mutableUsers = true;
   programs.fish.enable = true;
   users.users.stig = {
@@ -16,12 +20,6 @@
   imports = [
     # ./programs
     # ./services
-  ];
-
-  environment.systemPackages = with pkgs; [
-    git
-    starship
-    libsForQt5.qt5.qtgraphicaleffects
   ];
 
   # This value determines the NixOS release from which the default
