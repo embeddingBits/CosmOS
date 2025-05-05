@@ -1,7 +1,7 @@
 { pkgs,lib,...}: {
   documentation.man.generateCaches = false;
   # "xz -Xbcj x86" and "xz -Xpreset 9 -Xbcj x86" don't work
-  isoImage.squashfsCompression = "xz -Xbcj x86 -Xdict-size 100%";
+  isoImage.squashfsCompression = "zstd -Xcompression-level 22";
   nixpkgs.hostPlatform = "x86_64-linux";
   services.journald.extraConfig = ''
     Storage=none
