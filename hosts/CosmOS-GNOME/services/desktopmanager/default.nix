@@ -1,49 +1,75 @@
-{ config, pkgs, ... }: {
+{ pkgs, lib, ... }: {
   services.xserver = {
-    desktopManager.gnome = {
-      enable = true;
-      # Disable non-essential GNOME components
-      extraGSettingsOverrides = ''
-        [org.gnome.desktop.interface]
-        enable-hot-corners=false
-      '';
-    };
-    # Disable non-essential X11 services
+    enable = true;
+    desktopManager.gnome.enable = true;
+
     xkb.layout = "us";
     xkb.options = "terminate:ctrl_alt_bksp";
   };
-  services.libinput.enable = true;  # Touchpad support
-  # Disable GNOME services we don't need
+
+  services.libinput.enable = true;
+
+  environment.gnome.excludePackages = with pkgs; [
+    cheese
+    epiphany
+    evince
+    gedit
+    geary
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-disk-utility
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-text-editor
+    gnome-photos
+    gnome-screenshot
+    gnome-system-monitor
+    gnome-terminal
+    gnome-weather
+    gnome-tour
+    nautilus
+    simple-scan
+    totem
+    yelp
+    gnome-connections        
+    gnome-remote-desktop
+    gnome-boxes              
+    gnome-user-docs          
+    gnome-initial-setup      
+    gnome-backgrounds        
+    gnome-software           
+    gnome-shell-extensions                  
+    rygel                   
+    sushi                   
+    gnome-user-share         
+  ];
+
+  # Disable all optional GNOME services
   services.gnome = {
-    # Disable tracker (file indexing)
+    core-utilities.enable = false;
+    games.enable = false;
     localsearch.enable = false;
     tinysparql.enable = false;
+    evolution-data-server.enable = lib.mkForce false;
+    rygel.enable = false;
+    sushi.enable = false;
+    gnome-user-share.enable = false;
   };
 
-  services.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = false;
-    pulse.enable = true;
-    # Disable extra features
-    jack.enable = false;
-  };
-
-  # Disable printing service
   services.printing.enable = false;
-
-  # Disable Bluetooth if not needed
   hardware.bluetooth.enable = false;
 
   environment.systemPackages = with pkgs; [
-    # Gnome Extensions
+    gnomeExtensions.user-themes  # Keep only essential extension(s)
     gnomeExtensions.blur-my-shell
-    gnomeExtensions.burn-my-windows
+    # gnomeExtensions.burn-my-windows
     gnomeExtensions.dock-from-dash
-    gnomeExtensions.forge
-    gnomeExtensions.logo-menu
-    gnomeExtensions.space-bar
-    gnomeExtensions.user-themes
+    # gnomeExtensions.forge
+    # gnomeExtensions.logo-menu
+    # gnomeExtensions.space-bar
     gnomeExtensions.user-themes-x
   ];
 }
