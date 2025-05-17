@@ -6,10 +6,10 @@
     ./dconf.nix
     ./light.nix
     ./mako
-    # ./btop
-    # ./cava
-    # ./ranger
-    # ./zellij
+    ./btop
+    ./cava
+    ./ranger
+    ./zellij
     ./WMs
     ./waybar
   ];

@@ -1,5 +1,5 @@
 {
-  description = "Stig's NixOS Flake";
+  description = "Stig's NixOS ISOs";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -38,10 +38,12 @@
 		        specialArgs = { inherit inputs; };
             modules = [
               "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix"
-              ({ ... }: {
-                environment.systemPackages =  [
+              ({ lib,... }: {
+                boot.supportedFilesystems.zfs = lib.mkForce false;
+                environment.systemPackages = [
                   zen-browser.packages.${system}.default
                 ];
+                networking.wireless.enable = lib.mkForce false;
               })
               ./hosts/common
               ./hosts/CosmOS-Hyprland
@@ -73,7 +75,7 @@
             modules = [
               "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix"
               ({ lib,... }: {
-                # boot.supportedFilesystems.zfs = lib.mkForce false;
+                boot.supportedFilesystems.zfs = lib.mkForce false;
                 environment.systemPackages = [
                   zen-browser.packages.${system}.default
                 ];

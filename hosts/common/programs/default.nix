@@ -2,12 +2,12 @@
   imports = [
     ./starship
     ./shells
-    # ./gnupg
-    # ./term
+    ./gnupg
+    ./term
     ./nix
     ./git
-    # ./ssh
-    # ./gdb
-    # ./plymouth
+    ./ssh
+    ./gdb
+    ./plymouth
   ];
 }

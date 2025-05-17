@@ -1,7 +1,8 @@
 { pkgs,lib,...}: {
   documentation.man.generateCaches = false;
   # "xz -Xbcj x86" and "xz -Xpreset 9 -Xbcj x86" don't work
-  isoImage.squashfsCompression = "xz -Xbcj x86 -Xdict-size 100%";
+  # isoImage.squashfsCompression = "zstd -Xcompression-level 19";
+  # USE DEFAULT COMPRESSION SETTINGS SINCE ISO SIZE DOESN'T MATTER ANYMORE
   nixpkgs.hostPlatform = "x86_64-linux";
   services.journald.extraConfig = ''
     Storage=none
@@ -18,8 +19,8 @@
   };
 
   imports = [
-    # ./programs
-    # ./services
+    ./programs
+    ./services
   ];
 
   # This value determines the NixOS release from which the default
