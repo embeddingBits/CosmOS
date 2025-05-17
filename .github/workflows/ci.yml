@@ -48,12 +48,12 @@ jobs:
           cp result/iso/*.iso ${{ matrix.flavor }}.iso
           chmod +w ${{ matrix.flavor }}.iso
 
-      - name: Upload ISO
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v${{ needs.prepare.outputs.build_date }}
-          name: "CosmOS ${{ needs.prepare.outputs.build_date }}"
-          body: Automated ISO release.
-          files: ${{ matrix.flavor }}.iso
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Upload ISO
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     tag_name: v${{ needs.prepare.outputs.build_date }}
+      #     name: "CosmOS ${{ needs.prepare.outputs.build_date }}"
+      #     body: Automated ISO release.
+      #     files: ${{ matrix.flavor }}.iso
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
