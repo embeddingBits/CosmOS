@@ -2,7 +2,8 @@
   documentation.man.generateCaches = false;
   # "xz -Xbcj x86" and "xz -Xpreset 9 -Xbcj x86" don't work
   # isoImage.squashfsCompression = "zstd -Xcompression-level 19";
-  # USE DEFAULT COMPRESSION SETTINGS SINCE ISO SIZE DOESN'T MATTER ANYMORE
+  # Use zstd instead of xz for compressing the liveUSB image, it's 6x faster and 15% bigger. See https://discourse.nixos.org/t/creating-a-nixos-live-cd-for-whole-system/35638/2
+  isoImage.squashfsCompression = "zstd -Xcompression-level 6";
   nixpkgs.hostPlatform = "x86_64-linux";
   services.journald.extraConfig = ''
     Storage=none
