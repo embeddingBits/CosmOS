@@ -8,6 +8,6 @@
     ./git
     ./ssh
     ./gdb
-    ./plymouth
+    # ./plymouth # causes problems when building the ISO
   ];
 }
