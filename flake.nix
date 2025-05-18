@@ -6,7 +6,7 @@
     # nixos.url = "github:NixOS/nixos-hardware/master";
     
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
@@ -63,7 +63,7 @@
           homeConfigurations = {
             hyprland = home-manager.lib.homeManagerConfiguration {
               pkgs = nixpkgs.legacyPackages.x86_64-linux;
-              modules = [ ./hosts/hyprland/home.nix stylix.homeManagerModules.stylix ];
+              modules = [ ./hosts/CosmOS-Hyprland/home.nix stylix.homeManagerModules.stylix ];
               extraSpecialArgs = { inherit inputs; };
             };
           };
@@ -100,7 +100,7 @@
           homeConfigurations = {
             gnome = home-manager.lib.homeManagerConfiguration {
               pkgs = nixpkgs.legacyPackages.x86_64-linux;
-              modules = [ ./hosts/hyprland/home.nix stylix.homeManagerModules.stylix ];
+              modules = [ ./hosts/CosmOS-GNOME/home.nix stylix.homeManagerModules.stylix ];
               extraSpecialArgs = { inherit inputs; };
             };
           };
