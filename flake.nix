@@ -68,8 +68,6 @@
             };
           };
 
-
-
           CosmOS-GNOME = nixpkgs.lib.nixosSystem {
 		        specialArgs = { inherit inputs; };
             modules = [
