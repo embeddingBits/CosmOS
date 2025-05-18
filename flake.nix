@@ -43,7 +43,8 @@
                 environment.systemPackages = [
                   zen-browser.packages.${system}.default
                 ];
-                networking.wireless.enable = lib.mkForce false;
+                # networking.wireless.enable = lib.mkForce false;
+                networking.networkmanager.enable = lib.mkForce true;
               })
               ./hosts/common
               ./hosts/CosmOS-Hyprland
@@ -78,7 +79,8 @@
                 environment.systemPackages = [
                   zen-browser.packages.${system}.default
                 ];
-                networking.wireless.enable = lib.mkForce false;
+                #networking.wireless.enable = lib.mkForce false;
+                networking.networkmanager.enable = lib.mkForce true;
               })
               ./hosts/common
               ./hosts/CosmOS-GNOME

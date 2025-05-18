@@ -12,7 +12,7 @@ in
         "blur-my-shell@aunetx"
         "dash-to-dock@micxgx@gmail.com"
         "logomenu@aryan_k"
-        "space-bar@luhrioh"
+        # "space-bar@luhrioh"
         "app-menu@gnome-shell-extensions.gcampax.github.com"
         "places-menu@gnome-shell-extensions.github.com"
       ];
@@ -21,7 +21,7 @@ in
         "org.gnome.Nautilus.desktop"
         "org.gnome.Settings.desktop"
         "emacs.desktop"
-        "chromium.desktop"
+        "zen-browser.desktop"
       ];
     };
 

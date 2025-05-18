@@ -81,9 +81,9 @@
     gnomeExtensions.user-themes-x
     gnomeExtensions.blur-my-shell
     # gnomeExtensions.burn-my-windows
-    gnomeExtensions.dock-from-dash
+    gnomeExtensions.dash-to-dock
     gnomeExtensions.logo-menu
-    gnomeExtensions.space-bar
+    # gnomeExtensions.space-bar
     # gnomeExtensions.forge
     
   ];
