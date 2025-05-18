@@ -75,6 +75,7 @@
             modules = [
               "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix"
               ({ lib,... }: {
+                isoImage.edition = "gnome";
                 boot.supportedFilesystems.zfs = lib.mkForce false;
                 environment.systemPackages = [
                   zen-browser.packages.${system}.default
