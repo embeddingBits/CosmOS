@@ -1,0 +1,21 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("Open Ghostty"),
+    ): Spawn("ghostty"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "z",
+        description: Some("Open Emacsclient"),
+    ): Spawn("emc"),
+}
