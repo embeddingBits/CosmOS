@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{pkgs,inputs,...}: {
   environment.systemPackages = [ pkgs.ghostty ];
-  home-manager.users.stig.home = {
+  inputs.home-manager.users.stig.home = {
     # packages = [ pkgs.ghostty ];
     file.".config/ghostty/config".source = ./config;
   };

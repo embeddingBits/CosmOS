@@ -1,5 +1,5 @@
-{pkgs,lib,...}: {
-  home-manager.users.stig = {
+{pkgs,lib,inputs,...}: {
+  inputs.home-manager.users.stig = {
     gtk = {
       enable = true;
     };

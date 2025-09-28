@@ -10,7 +10,6 @@
     ./cava
     ./ranger
     ./zellij
-    ./WMs
     ./waybar
   ];
   # systemd.user.startServices = "sd-switch";

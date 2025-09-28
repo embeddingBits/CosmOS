@@ -1,7 +1,3 @@
 {...}: {
-  services = {
-    gpm = {
-      enable = true;
-    };
-  };
+  services.gpm.enable = true;
 }
