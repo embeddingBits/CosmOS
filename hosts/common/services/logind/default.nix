@@ -1,11 +1,11 @@
 {...}: {
   services = {
     logind = {
-      lidSwitch = "suspend-then-hibernate";
-      settings.Login = ''
-        DefaultTimeoutStopSec = 5s
-        HandlePowerKey = ignore # semicolons required??
-      '';
+      settings.Login = {
+        HandleLidSwitch = "suspend-then-hibernate";
+        DefaultTimeoutStopSec = "5s";
+        HandlePowerKey = "ignore"; # semicolons required??
+      };
     };
   };
 }
