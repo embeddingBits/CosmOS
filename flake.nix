@@ -42,7 +42,7 @@
           home-manager.backupFileExtension = "/tmp/${toString self.lastModified}.bak";
           home-manager.users.${username} = import ./home/linux.nix;
           home-manager.extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs username;
             system = "x86_64-linux";
           };
         }

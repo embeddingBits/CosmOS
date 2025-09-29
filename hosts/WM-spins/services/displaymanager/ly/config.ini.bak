@@ -22,7 +22,7 @@ asterisk = *
 clear_password = false
 
 # Enable vi keybindings
-vi_mode = false
+vi_mode = true
 
 # The `fg` and `bg` color settings take a digit 0-8 corresponding to:
 #define TB_DEFAULT 0x00
