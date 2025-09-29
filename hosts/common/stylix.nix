@@ -1,9 +1,9 @@
-{pkgs, lib, inputs, ...}: 
+{pkgs, lib, home-manager, username, ...}: 
 let 
   systemfont = { package = pkgs.nerd-fonts.jetbrains-mono; name = "JetBrainsMono NF"; };
 in
 {
-  inputs.home-manager.users.stig = {
+  home-manager.users.${username} = {
     stylix.iconTheme = {
       enable = true;
       dark = "Papirus-Dark";
@@ -35,7 +35,6 @@ in
       gtk = {
         enable = true;
         # icon theme is set in gtk.nix
-        flatpakSupport.enable = true;
       };
       
 /*      

@@ -1,6 +1,6 @@
-{pkgs, lib,inputs, ...}: {
+{pkgs, lib,inputs,username, home-manager,...}: {
   environment.systemPackages = [ pkgs.kitty ];
-  inputs.home-manager.users.stig.home = {
+  home-manager.users.${username}.home = {
     # packages = [ pkgs.kitty ];
     file.".config/kitty" = {
       recursive = true;

@@ -1,5 +1,5 @@
-{pkgs,inputs,...}: {
-  inputs.home-manager.users.stig = {
+{pkgs,inputs, home-manager, username, ...}: {
+  home-manager.users.${username} = {
     home.packages = with pkgs; [ bat eza ripgrep ];
   };
 }

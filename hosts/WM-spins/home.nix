@@ -1,3 +1,3 @@
-{ pkgs,... }: {
-  home-manager.users.stig.home.packages = with pkgs; [ ];
+{ pkgs, username, ... }: {
+  home-manager.users.${username}.home.packages = with pkgs; [ ripgrep-all ];
 }

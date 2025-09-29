@@ -1,5 +1,5 @@
-{pkgs, lib,...}: {
-  home-manager.users.stig.home = {
+{pkgs, lib,username, ...}: {
+  home-manager.users.${username}.home = {
     packages = [ pkgs.btop ];
     file.".config/btop" = {
       recursive = true;

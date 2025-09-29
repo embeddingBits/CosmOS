@@ -1,4 +1,4 @@
-{ pkgs,config,home-manager,lib, ... }:
+{ pkgs,config,home-manager,lib, username, ... }:
 
 let
   cfg = config.options.hyprland;
@@ -13,7 +13,7 @@ in
     };
     programs.hyprlock.enable = true;
     services.hypridle.enable = true;
-    home-manager.users.stig.home = {
+    home-manager.users.${username}.home = {
       packages = with pkgs; [ hyprpaper hyprcursor ];
       activation.preHyprland = lib.mkBefore ''
         rm -rf ~/.config/hypr/hyprland.conf

@@ -69,7 +69,7 @@
           specialArgs = { inherit inputs username; };
           modules = [
             ./hosts/CosmOS-Cosmic
-            ({ }: {
+            ({...}: {
               isoImage.edition = "cosmic";
             })
           ] ++ commonModules;
@@ -103,7 +103,7 @@
           specialArgs = { inherit inputs username; };
           modules = [
             ./hosts/CosmOS-GNOME
-            ({ }: {
+            ({ ... }: {
               isoImage.edition = "gnome";
             })
           ] ++ commonModules;

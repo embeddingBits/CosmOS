@@ -1,5 +1,5 @@
-{pkgs, lib,...}: {
-  home-manager.users.stig.home = {
+{pkgs, lib, username, ...}: {
+  home-manager.users.${username}.home = {
     packages = [ pkgs.nwg-dock-hyprland ];
   };
   file.".config/nwg-dock-hyprland" = {
